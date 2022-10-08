@@ -4,6 +4,7 @@
 
   display: grid;
   grid-template-columns: 4vw 90vw 4vw;
+  overflow-x: hidden;
 }
 
 .container .left {
