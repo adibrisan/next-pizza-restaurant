@@ -1,4 +1,36 @@
 .container {
   background-color: var(--navbarColor);
   grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: 4vw 90vw 4vw;
+}
+
+.container .left {
+  grid-column: 1 / 1;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.container .right {
+  grid-column: 3 / 3;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.imgWrapper {
+  height: 100%;
+  width: 300vw;
+  display: flex;
+  transition: all 1.2s ease;
+}
+
+.imgSection {
+  width: 100vw;
+  height: 90vh;
+  position: relative;
 }
