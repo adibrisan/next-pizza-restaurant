@@ -1,0 +1,9 @@
+.layout {
+  display: grid;
+  grid-template-rows: minmax(min-content, 10vh) 90vh repeat(2, max-content);
+  grid-template-columns: repeat(
+    8,
+    [col-start] minmax(min-content, 25rem) [col-end]
+  );
+  grid-gap: 10px;
+}

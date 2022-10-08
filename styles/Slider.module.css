@@ -1,0 +1,4 @@
+.container {
+  background-color: var(--navbarColor);
+  grid-column: 1 / -1;
+}

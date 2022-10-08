@@ -29,7 +29,7 @@ const Navbar = () => {
             src="/img/logo.png"
             alt="logo image"
             width="160px"
-            height="69px"
+            height="70px"
           />
           <li className={styles.listItem}>Events</li>
           <li className={styles.listItem}>Blog</li>
@@ -44,7 +44,9 @@ const Navbar = () => {
             width="30px"
             height="30px"
           />
-          <div className={styles.counter}>2</div>
+          <div className={styles.counter}>
+            <div className={styles.number}>2</div>
+          </div>
         </div>
       </div>
     </nav>

@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  grid-column: 1 / -1;
 
-  height: 10rem;
   padding: 0 5rem;
   background-color: var(--navbarColor);
   position: sticky;
+  top: 0;
 }
 
 .navItem {
@@ -48,9 +49,10 @@
 
 .navList {
   display: flex;
+  justify-content: center;
   align-items: center;
 
-  padding: 0;
+  /* padding: 10rem; */
   list-style: none;
   color: var(--color-white);
 }
@@ -58,17 +60,31 @@
 .listItem {
   margin: 2rem;
   font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .cart {
   display: flex;
   position: relative;
+  cursor: pointer;
 }
 
 .counter {
   position: absolute;
-  left: 3.7rem;
-  bottom: 1.8rem;
+  left: 2rem;
+  bottom: 1.4rem;
   font-size: 1.5rem;
-  color: var(--color-white);
+  background-color: var(--color-white);
+  padding: 0.6rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.counter > div {
+  transform: translateY(-4px);
+  text-align: center;
+  font-weight: 500;
+  color: var(--navbarColor);
 }
