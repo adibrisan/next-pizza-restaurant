@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const HomeLayout = ({ children }) => {
   return (
     <>
       <Navbar />
@@ -13,4 +13,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default HomeLayout;

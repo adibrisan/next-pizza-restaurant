@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import styles from "../styles/Slider.module.css";
+import styles from "../../styles/Slider.module.css";
 
 const Slider = () => {
   const [slidePosition, setSlidePosition] = useState(0);
@@ -29,6 +29,7 @@ const Slider = () => {
           alt="arrow left"
           width="55px"
           height="55px"
+          loading="lazy"
         />
       </div>
 
@@ -43,6 +44,7 @@ const Slider = () => {
               alt="featured image"
               layout="fill"
               objectFit="contain"
+              loading="lazy"
             />
           </div>
         ))}
@@ -53,6 +55,7 @@ const Slider = () => {
           alt="arrow right"
           width="55px"
           height="55px"
+          loading="lazy"
         />
       </div>
     </div>

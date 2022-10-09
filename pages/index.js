@@ -1,7 +1,7 @@
 import Head from "next/head";
 
-import Slider from "../components/Slider";
-import PizzaMenu from "../components/PizzaMenu";
+import Slider from "../components/custom/Slider";
+import PizzaMenu from "../components/custom/PizzaMenu";
 
 import styles from "../styles/HomeLayout.module.css";
 
