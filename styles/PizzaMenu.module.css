@@ -1,4 +1,22 @@
 .container {
   background-color: var(--color-white);
+  grid-column: 2 / -2;
+
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.container h1 {
+  margin-bottom: 2rem;
+}
+
+.container p,
+.container h1 {
+  font-size: 1.7rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
   grid-column: 1 / -1;
+  margin-bottom: 5rem;
 }
