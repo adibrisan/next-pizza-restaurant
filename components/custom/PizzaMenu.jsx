@@ -1,5 +1,7 @@
 import React from "react";
 
+import PizzaCard from "./PizzaCard";
+
 import styles from "../../styles/PizzaMenu.module.css";
 
 const PizzaMenu = () => {
@@ -12,7 +14,23 @@ const PizzaMenu = () => {
         possimus adipisci, officia excepturi nesciunt esse voluptatem nobis
         earum velit illum laboriosam harum!
       </p>
-      <div className={styles.pizzaList}>yestestasdasdasdasdasdsadsdsdsdsds</div>
+      <div className={styles.pizzaList}>
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+      </div>
     </div>
   );
 };

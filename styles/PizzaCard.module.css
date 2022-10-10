@@ -1,3 +1,41 @@
 .container {
-  background-color: var(--color-grey-light-1);
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(209, 65, 30, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(209, 65, 30, 0.78);
+}
+
+.pizzaTitle {
+  color: var(--main-color);
+}
+
+.pizzaPrice {
+  color: var(--color-grey-dark-2);
+}
+
+.pizzaDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 10rem;
+  text-overflow: ellipsis;
+  color: var(--color-grey-dark-1);
+}
+
+.imgWrapper {
+  transition: all 0.5s;
+  margin-bottom: 3rem;
+}
+
+.container .imgWrapper:hover {
+  transform: scale(1.4);
 }
