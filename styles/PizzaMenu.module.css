@@ -1,9 +1,10 @@
 .container {
   background-color: var(--color-white);
   grid-column: 2 / -2;
+  margin-bottom: 10rem;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(autofit, minmax(10rem, 1fr));
 }
 
 .container h1 {
@@ -23,6 +24,6 @@
 .container .pizzaList {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem));
   grid-gap: 3.5rem;
 }

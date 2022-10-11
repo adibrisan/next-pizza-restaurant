@@ -1,5 +1,4 @@
 .container {
-  height: min-content;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -7,8 +6,8 @@
   justify-content: space-between;
 
   background: rgba(209, 65, 30, 0.16);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 1.6rem;
+  box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   border: 1px solid rgba(209, 65, 30, 0.78);
@@ -23,11 +22,7 @@
 }
 
 .pizzaDescription {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  height: 10rem;
-  text-overflow: ellipsis;
+  height: 5rem;
   color: var(--color-grey-dark-1);
 }
 
