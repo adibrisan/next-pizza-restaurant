@@ -16,11 +16,7 @@
   align-items: center;
 }
 
-.navItem:nth-child(2) {
-  flex: 3;
-}
-
-.navItem:nth-child(3) {
+.navItem:last-child {
   justify-content: flex-end;
 }
 
