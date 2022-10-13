@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
+import MobileNav from "../core/MobileNav/MobileNav";
 import Button from "../core/Button/Button";
 
 import styles from "../../styles/Navbar.module.css";
@@ -65,6 +66,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <MobileNav />
     </nav>
   );
 };

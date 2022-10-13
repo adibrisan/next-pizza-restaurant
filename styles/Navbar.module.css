@@ -11,11 +11,6 @@
   top: 0;
   z-index: 1000;
 }
-@media screen and (max-width: 1000px) {
-  .container {
-    /* display: none; */
-  }
-}
 
 .navItem {
   flex: 1;
@@ -96,4 +91,10 @@
   display: inline-block;
   width: 12rem;
   object-fit: cover;
+}
+
+@media screen and (max-width: 1200px) {
+  .container .navItem:nth-child(2) {
+    display: none;
+  }
 }
