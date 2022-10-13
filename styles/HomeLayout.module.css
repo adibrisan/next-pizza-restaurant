@@ -1,10 +1,10 @@
 .layout {
   display: grid;
-  grid-template-rows: 90vh max-content;
+  grid-template-rows: 90vh min-content;
   grid-template-columns: repeat(
     8,
-    [col-start] minmax(min-content, 25rem) [col-end]
+    [col-start] minmax(min-content, max-content) [col-end]
   );
-  grid-gap: 5rem;
+  grid-row-gap: 8rem;
   overflow-y: hidden;
 }

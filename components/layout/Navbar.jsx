@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import Button from "../core/Button/Button";
+
 import styles from "../../styles/Navbar.module.css";
 
 const Navbar = () => {
@@ -22,18 +24,32 @@ const Navbar = () => {
       </div>
       <div className={styles.navItem}>
         <ul className={styles.navList}>
-          <li className={styles.listItem}>Home</li>
-          <li className={styles.listItem}>Products</li>
-          <li className={styles.listItem}>Menu</li>
-          <Image
-            src="/img/logo.png"
-            alt="logo image"
-            width="160px"
-            height="70px"
-          />
-          <li className={styles.listItem}>Events</li>
-          <li className={styles.listItem}>Blog</li>
-          <li className={styles.listItem}>Contact</li>
+          <li className={styles.listItem}>
+            <Button name="Home" link />
+          </li>
+          <li className={styles.listItem}>
+            <Button name="Products" link />
+          </li>
+          <li className={styles.listItem}>
+            <Button name="Menu" link />
+          </li>
+          <div className={styles.mainLogo}>
+            <Image
+              src="/img/logo.png"
+              alt="logo image"
+              width="350px"
+              height="200px"
+            />
+          </div>
+          <li className={styles.listItem}>
+            <Button name="Events" link />
+          </li>
+          <li className={styles.listItem}>
+            <Button name="Blog" link />
+          </li>
+          <li className={styles.listItem}>
+            <Button name="Contact" link />
+          </li>
         </ul>
       </div>
       <div className={styles.navItem}>

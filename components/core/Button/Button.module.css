@@ -1,0 +1,23 @@
+.btn_link:link,
+.btn_link:visited {
+  font-size: 2rem;
+  color: var(--color-white);
+  display: inline-block;
+  text-decoration: none;
+  padding: 3px;
+}
+
+.btn_link::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-white);
+  transform: scaleX(0);
+  transition: all 0.5s ease;
+}
+
+.btn_link:hover::after {
+  transform: scaleX(1);
+}
