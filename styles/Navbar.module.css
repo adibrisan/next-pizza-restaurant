@@ -97,4 +97,9 @@
   .container .navItem:nth-child(2) {
     display: none;
   }
+
+  .navItem:nth-child(3) {
+    justify-content: flex-end;
+    margin-right: 3rem;
+  }
 }
