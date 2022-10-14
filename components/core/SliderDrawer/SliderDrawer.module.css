@@ -1,0 +1,50 @@
+.slideDrawer {
+  position: fixed;
+  right: 0;
+  top: 10vh;
+  height: 100vh;
+  width: 35vw;
+  background-color: var(--main-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0.26);
+
+  animation: slide-in-left 0.5s;
+}
+
+.slideClose {
+  position: fixed;
+  right: 0;
+  top: 10vh;
+  height: 100vh;
+  width: 35vw;
+  background-color: var(--main-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0.26);
+  animation: slide-out 0.5s;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(100%);
+    opacity: 0.25;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .slideDrawer {
+    display: none;
+  }
+}

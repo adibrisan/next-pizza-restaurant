@@ -2,9 +2,9 @@ import React from "react";
 
 import styles from "./MobileNav.module.css";
 
-const MobileNav = () => {
+const MobileNav = ({ onClick }) => {
   return (
-    <div className={styles.navContainer}>
+    <div onClick={onClick} className={styles.navContainer}>
       <span className={styles.navIcon} />
     </div>
   );
