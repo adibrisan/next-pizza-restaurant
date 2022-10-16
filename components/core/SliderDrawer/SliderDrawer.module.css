@@ -5,6 +5,9 @@
   height: 100vh;
   width: 35vw;
   background-color: var(--navbarColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   animation: slide-in-left 0.5s;
 }
@@ -16,8 +19,20 @@
   height: 100vh;
   width: 35vw;
   background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   animation: slide-out 0.5s;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10vh;
 }
 
 @keyframes slide-in-left {

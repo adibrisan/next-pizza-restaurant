@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
+import Button from "../Button/Button";
+
 import { MOBILE_SLIDER_TIMEOUT } from "../../../consts";
 
 import styles from "./SliderDrawer.module.css";
 
-const SliderDrawer = ({ open, onClick, children }) => {
+const SliderDrawer = ({ open, onClick }) => {
   const [renderSlide, setRenderSlide] = useState(false);
   const sliderStyle = open ? styles.slideDrawer : styles.slideClose;
 
@@ -25,7 +27,26 @@ const SliderDrawer = ({ open, onClick, children }) => {
     <>
       {renderSlide && (
         <aside className={sliderStyle} onClick={onClick}>
-          {children}
+          <ul className={styles.navList}>
+            <li>
+              <Button name="Home" link />
+            </li>
+            <li>
+              <Button name="Products" link />
+            </li>
+            <li>
+              <Button name="Menu" link />
+            </li>
+            <li>
+              <Button name="Events" link />
+            </li>
+            <li>
+              <Button name="Blog" link />
+            </li>
+            <li>
+              <Button name="Contact" link />
+            </li>
+          </ul>
         </aside>
       )}
     </>
