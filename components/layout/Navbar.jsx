@@ -9,7 +9,7 @@ import styles from "../../styles/Navbar.module.css";
 
 const Navbar = () => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
-  console.log(drawerIsOpen);
+  // console.log(drawerIsOpen);
 
   const toggleDrawer = () => {
     setDrawerIsOpen((prev) => !prev);
@@ -74,7 +74,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <MobileNav onClick={toggleDrawer} />
+      <MobileNav open={drawerIsOpen} onClick={toggleDrawer} />
       <SliderDrawer
         open={drawerIsOpen}
         onClick={() => setDrawerIsOpen(false)}

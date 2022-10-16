@@ -2,10 +2,20 @@ import React from "react";
 
 import styles from "./MobileNav.module.css";
 
-const MobileNav = ({ onClick }) => {
+const MobileNav = ({ open, onClick }) => {
   return (
-    <div onClick={onClick} className={styles.navContainer}>
-      <span className={styles.navIcon} />
+    <div className={styles.navContainer}>
+      <input
+        checked={open}
+        onClick={onClick}
+        type="checkbox"
+        id="nav__toggle"
+        className={styles.checkbox}
+      />
+
+      <label htmlFor="nav__toggle" className={styles.button}>
+        <span className={styles.navIcon} />
+      </label>
     </div>
   );
 };

@@ -44,7 +44,7 @@ const Slider = () => {
               alt="featured image"
               layout="fill"
               objectFit="contain"
-              loading="lazy"
+              priority
             />
           </div>
         ))}

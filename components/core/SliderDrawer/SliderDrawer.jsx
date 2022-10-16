@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { MOBILE_SLIDER_TIMEOUT } from "../../../consts";
+
 import styles from "./SliderDrawer.module.css";
 
 const SliderDrawer = ({ open, onClick, children }) => {
@@ -14,7 +16,7 @@ const SliderDrawer = ({ open, onClick, children }) => {
       if (!open) {
         setRenderSlide(false);
       }
-    }, 500);
+    }, MOBILE_SLIDER_TIMEOUT);
 
     return () => clearTimeout(timer);
   }, [open]);

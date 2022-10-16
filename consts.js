@@ -1,0 +1,1 @@
+export const MOBILE_SLIDER_TIMEOUT = 490;

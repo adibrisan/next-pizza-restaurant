@@ -24,6 +24,6 @@
 .container .pizzaList {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 3.5rem;
 }
