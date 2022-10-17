@@ -90,3 +90,46 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pizzaImg {
+    width: 100%;
+    height: 35%;
+  }
+
+  .pizzaOptions {
+    grid-row: 2 / -1;
+  }
+}
+
+@media screen and (min-width: 630px) and (max-width: 840px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pizzaImg {
+    padding-top: 20rem;
+    width: 100%;
+    height: 70vh;
+  }
+
+  .pizzaOptions {
+    grid-row: 2 / -1;
+  }
+}
+
+@media screen and (min-width: 630px) and (max-width: 1200px) {
+  .pizzaImg {
+    padding-top: 22rem;
+    width: 80%;
+    height: 70vh;
+  }
+}
