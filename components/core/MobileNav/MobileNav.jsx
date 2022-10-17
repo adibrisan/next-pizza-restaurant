@@ -6,6 +6,7 @@ const MobileNav = ({ open, onClick }) => {
   return (
     <div className={styles.navContainer}>
       <input
+        readOnly
         checked={open}
         onClick={onClick}
         type="checkbox"

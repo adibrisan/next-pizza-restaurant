@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "./Button.module.css";
 
-const Button = ({ name, link, href }) => {
+const Button = ({ name, link, href, ...props }) => {
   return (
     <>
       {link ? (
@@ -11,7 +11,9 @@ const Button = ({ name, link, href }) => {
           <a className={styles.btn_link}>{name}</a>
         </Link>
       ) : (
-        <button>{name}</button>
+        <button className={styles.btn} {...props}>
+          {name} <div>&rarr;</div>
+        </button>
       )}
     </>
   );

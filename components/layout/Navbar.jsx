@@ -9,7 +9,6 @@ import styles from "../../styles/Navbar.module.css";
 
 const Navbar = () => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
-  // console.log(drawerIsOpen);
 
   const toggleDrawer = () => {
     setDrawerIsOpen((prev) => !prev);
@@ -22,8 +21,8 @@ const Navbar = () => {
           <Image
             src="/img/telephone.png"
             alt="call image"
-            width="32"
-            height="32"
+            width="32px"
+            height="32px"
           />
         </div>
         <div className={styles.texts}>

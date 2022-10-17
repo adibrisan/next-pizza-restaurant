@@ -19,7 +19,6 @@ const Slider = () => {
       setSlidePosition(slidePosition !== 2 ? slidePosition + 1 : 0);
     }
   };
-  console.log(slidePosition);
 
   return (
     <div className={styles.container}>
