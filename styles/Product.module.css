@@ -108,6 +108,18 @@
   }
 }
 
+@media screen and (max-width: 630px) {
+  .pizzaOptions .size .pizzaSizes {
+    width: 70vw;
+  }
+
+  .sizeContainer .category {
+    font-size: 1.7rem;
+    position: absolute;
+    top: 0;
+  }
+}
+
 @media screen and (min-width: 630px) and (max-width: 840px) {
   .container {
     display: flex;
@@ -124,12 +136,35 @@
   .pizzaOptions {
     grid-row: 2 / -1;
   }
+
+  .pizzaOptions .size .pizzaSizes {
+    width: 70vw;
+  }
+
+  .sizeContainer .category {
+    font-size: 1.7rem;
+    position: absolute;
+    top: 0;
+  }
 }
 
-@media screen and (min-width: 630px) and (max-width: 1200px) {
+@media screen and (min-width: 840px) and (max-width: 1200px) {
+  .container {
+    margin-bottom: 4rem;
+  }
   .pizzaImg {
     padding-top: 22rem;
     width: 80%;
     height: 70vh;
+  }
+
+  .pizzaOptions .size .pizzaSizes {
+    width: 70vw;
+  }
+
+  .sizeContainer .category {
+    font-size: 1.7rem;
+    position: absolute;
+    top: 0;
   }
 }
