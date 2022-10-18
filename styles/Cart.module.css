@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  margin-top: 10vh;
+  background-color: var(--color-white);
+  padding: 5rem;
+}
+
+.imgContainer {
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+}
+
+.pizzaOrders {
+  flex: 2;
+}
+
+.tableContainer {
+  width: 100%;
+  border-spacing: 2rem;
+}
+
+.pizzaName {
+  font-weight: 500;
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+
+.pizzaTotal {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.cartOrder {
+  flex: 1;
+  height: 24rem;
+  background-color: var(--color-grey-dark-1);
+  color: var(--color-white);
+  padding: 3rem;
+}
+
+.cartWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.lastDetails {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.checkoutBtn {
+  height: 4rem;
+  width: 100%;
+  padding: 0.7rem 2rem;
+  border: none;
+  background-color: var(--color-white);
+  color: var(--main-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  transition: all 0.2s;
+}
+
+.checkoutBtn div {
+  transition: margin-left 0.5s;
+  margin-left: 0.2rem;
+}
+
+.checkoutBtn:hover {
+  background-image: linear-gradient(
+    120deg,
+    var(--main-color) 0%,
+    transparent 80%,
+    var(--color-white) 90%
+  );
+  color: var(--soft-black);
+}
+
+.checkoutBtn:hover div {
+  margin-left: 1.5rem;
+}
+
+.checkoutBtn:active {
+  transform: translateY(5px);
+}
