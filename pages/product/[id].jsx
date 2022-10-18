@@ -52,8 +52,8 @@ const Product = () => {
                 <Image
                   src="/img/size.png"
                   alt="pizza size"
-                  width="30p"
-                  height="30px"
+                  width="40p"
+                  height="40px"
                 />
               </div>
               <div className={styles.sizeContainer}>
@@ -61,8 +61,8 @@ const Product = () => {
                 <Image
                   src="/img/size.png"
                   alt="pizza size"
-                  width="50p"
-                  height="50px"
+                  width="60p"
+                  height="60px"
                 />
               </div>
               <div className={styles.sizeContainer}>

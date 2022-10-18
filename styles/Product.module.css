@@ -78,6 +78,7 @@
 .checkbox {
   width: 2rem;
   height: 2rem;
+  accent-color: var(--main-color);
 }
 
 .checkboxTitle {
