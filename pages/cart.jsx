@@ -16,43 +16,46 @@ const Cart = () => {
       <div className={styles.container}>
         <div className={styles.pizzaOrders}>
           <table className={styles.tableContainer}>
-            <tr className={styles.row}>
-              <th>Product</th>
-              <th>Name</th>
-              <th>Extras</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Total</th>
-            </tr>
-            <tr>
-              <td>
-                <div className={styles.imgContainer}>
-                  <Image
-                    src="/img/pizza.png"
-                    alt="ordered pizza"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-              </td>
-              <td>
-                <span className={styles.pizzaName}>Buffalo</span>
-              </td>
-              <td>
-                <span className={styles.extras}>
-                  Double ingredient,extra jalapenos
-                </span>
-              </td>
-              <td>
-                <span className={styles.pizzaPrice}>$19.90</span>
-              </td>
-              <td>
-                <span className={styles.pizzaQuantity}>2</span>
-              </td>
-              <td>
-                <span className={styles.pizzaTotal}>$39.80</span>
-              </td>
-            </tr>
+            <tbody>
+              <tr className={styles.row}>
+                <th>Product</th>
+                <th>Name</th>
+                <th>Extras</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <td>
+                  <div className={styles.imgContainer}>
+                    <Image
+                      src="/img/pizza.png"
+                      alt="ordered pizza"
+                      layout="fill"
+                      objectFit="cover"
+                      priority
+                    />
+                  </div>
+                </td>
+                <td>
+                  <span className={styles.pizzaName}>Buffalo</span>
+                </td>
+                <td>
+                  <span className={styles.extras}>
+                    Double ingredient,extra jalapenos
+                  </span>
+                </td>
+                <td>
+                  <span className={styles.pizzaPrice}>$19.90</span>
+                </td>
+                <td>
+                  <span className={styles.pizzaQuantity}>2</span>
+                </td>
+                <td>
+                  <span className={styles.pizzaTotal}>$39.80</span>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className={styles.cartOrder}>
