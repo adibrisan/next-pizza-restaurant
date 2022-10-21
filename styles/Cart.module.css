@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  justify-items: center;
   margin-top: 10vh;
   background-color: var(--color-white);
   padding: 5rem;
@@ -16,14 +17,24 @@
 }
 
 .tableContainer {
-  width: 100%;
   border-spacing: 2rem;
+  width: max-content;
+}
+
+tbody .row {
+  font-size: 1.7rem;
 }
 
 .pizzaName {
   font-weight: 500;
   color: var(--main-color);
   font-size: 1.8rem;
+}
+
+.extras,
+.pizzaPrice,
+.pizzaQuantity {
+  font-size: 1.5rem;
 }
 
 .pizzaTotal {
@@ -33,7 +44,7 @@
 
 .cartOrder {
   flex: 1;
-  height: 24rem;
+  max-height: 24rem;
   background-color: var(--color-grey-dark-1);
   color: var(--color-white);
   padding: 3rem;
