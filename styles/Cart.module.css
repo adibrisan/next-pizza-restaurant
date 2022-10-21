@@ -7,8 +7,8 @@
 }
 
 .imgContainer {
-  width: 10rem;
-  height: 10rem;
+  width: 5rem;
+  height: 5rem;
   position: relative;
 }
 
@@ -103,4 +103,23 @@ tbody .row {
 
 .checkoutBtn:active {
   transform: translateY(5px);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    align-items: stretch;
+    justify-items: center;
+    flex-direction: column;
+    margin-top: 10vh;
+    height: 45vh;
+    background-color: var(--color-white);
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .tableContainer {
+    border-spacing: 1rem;
+    width: min-content;
+  }
 }
