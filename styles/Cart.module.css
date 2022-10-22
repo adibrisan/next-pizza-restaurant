@@ -123,3 +123,17 @@ tbody .row {
     width: min-content;
   }
 }
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  .container {
+    display: flex;
+    align-items: stretch;
+    justify-items: center;
+    flex-direction: column;
+  }
+
+  .tableContainer {
+    border-spacing: 1rem;
+    width: min-content;
+  }
+}

@@ -134,3 +134,19 @@
 .checkoutBtn:active {
   transform: translateY(5px);
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
