@@ -70,20 +70,22 @@
 
 .additionContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  width: 45rem;
+  width: 55rem;
 }
 
 .checkbox {
   width: 2rem;
   height: 2rem;
+  margin-right: 1rem;
   accent-color: var(--main-color);
 }
 
 .checkboxTitle {
   font-size: 1.2rem;
   font-weight: 400;
+  margin-right: 1rem;
 }
 
 .submit {
@@ -119,6 +121,12 @@
     font-size: 1.7rem;
     position: absolute;
     top: 0;
+  }
+
+  .additionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

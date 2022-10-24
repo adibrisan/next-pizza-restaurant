@@ -4,7 +4,7 @@ import PizzaCard from "./PizzaCard";
 
 import styles from "../../styles/PizzaMenu.module.css";
 
-const PizzaMenu = () => {
+const PizzaMenu = ({ pizzaMenu }) => {
   return (
     <div className={styles.container}>
       <h1>Best pizza in Timisoara</h1>
@@ -15,21 +15,9 @@ const PizzaMenu = () => {
         earum velit illum laboriosam harum!
       </p>
       <div className={styles.pizzaList}>
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
+        {pizzaMenu.map((pizza) => (
+          <PizzaCard key={pizza._id} pizzaDetails={pizza} />
+        ))}
       </div>
     </div>
   );

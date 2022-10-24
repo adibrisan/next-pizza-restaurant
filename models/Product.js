@@ -23,7 +23,7 @@ const ProductSchema = new mongoose.Schema(
     extra: {
       type: [
         {
-          text: { type: String, required: true },
+          title: { type: String, required: true },
           price: { type: Number, required: true },
         },
       ],

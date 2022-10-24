@@ -1,3 +1,4 @@
+import axios from "axios";
 import Head from "next/head";
 
 import Slider from "../components/custom/Slider";
@@ -5,7 +6,7 @@ import PizzaMenu from "../components/custom/PizzaMenu";
 
 import styles from "../styles/HomeLayout.module.css";
 
-export default function Home() {
+export default function Home({ pizzaMenu }) {
   return (
     <>
       <Head>
@@ -15,8 +16,18 @@ export default function Home() {
       </Head>
       <div className={styles.layout}>
         <Slider />
-        <PizzaMenu />
+        <PizzaMenu pizzaMenu={pizzaMenu} />
       </div>
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/products");
+
+  return {
+    props: {
+      pizzaMenu: res.data,
+    },
+  };
+};

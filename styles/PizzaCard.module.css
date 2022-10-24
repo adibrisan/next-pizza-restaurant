@@ -4,6 +4,7 @@
   text-align: center;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 
   background: rgba(209, 65, 30, 0.16);
   border-radius: 1.6rem;
