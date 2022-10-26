@@ -44,7 +44,9 @@ tbody .row {
 
 .cartOrder {
   flex: 1;
-  max-height: 24rem;
+  display: flex;
+  flex-direction: column;
+  max-height: max-content;
   background-color: var(--color-grey-dark-1);
   color: var(--color-white);
   padding: 3rem;
@@ -70,6 +72,7 @@ tbody .row {
   height: 4rem;
   width: 100%;
   padding: 0.7rem 2rem;
+  margin-bottom: 1rem;
   border: none;
   background-color: var(--color-white);
   color: var(--main-color);
@@ -103,6 +106,15 @@ tbody .row {
 
 .checkoutBtn:active {
   transform: translateY(5px);
+}
+
+.cashBtn {
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.paypalBtn {
+  align-self: center;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useState, Fragment } from "react";
+import { useDispatch } from "react-redux";
 import Head from "next/head";
 import Image from "next/image";
+
+import { addProduct } from "../../redux/cartSlice";
 
 import Button from "../../components/core/Button/Button";
 import Input from "../../components/core/Input/Input";
@@ -13,6 +16,8 @@ const Product = ({ pizza }) => {
   const [size, setSize] = useState(0);
   const [noPizza, setNoPizza] = useState(1);
   const [extra, setExtra] = useState([]);
+
+  const dispatch = useDispatch();
 
   const changePrice = (nr) => {
     setPrice(price + nr);
@@ -34,6 +39,10 @@ const Product = ({ pizza }) => {
       changePrice(-option.price);
       setExtra(extra.filter((extra) => extra._id !== option._id));
     }
+  };
+
+  const handleSubmit = () => {
+    dispatch(addProduct({ ...pizza, extra, price, quantity: noPizza }));
   };
 
   return (
@@ -122,7 +131,7 @@ const Product = ({ pizza }) => {
               value={noPizza}
               onChange={(e) => setNoPizza(e.target.value)}
             />
-            <Button name="Add to Cart" />
+            <Button name="Add to Cart" onClick={handleSubmit} />
           </div>
         </div>
       </div>

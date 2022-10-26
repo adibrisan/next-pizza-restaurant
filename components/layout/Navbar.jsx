@@ -1,5 +1,7 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import Link from "next/link";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 import SliderDrawer from "../core/SliderDrawer/SliderDrawer";
 import MobileNav from "../core/MobileNav/MobileNav";
@@ -9,6 +11,8 @@ import styles from "../../styles/Navbar.module.css";
 
 const Navbar = () => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+
+  const quantity = useSelector((state) => state.cart.quantity);
 
   const toggleDrawer = () => {
     setDrawerIsOpen((prev) => !prev);
@@ -60,19 +64,21 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className={styles.navItem}>
-        <div className={styles.cart}>
-          <Image
-            src="/img/cart.png"
-            alt="logo image"
-            width="30px"
-            height="30px"
-          />
-          <div className={styles.counter}>
-            <div className={styles.number}>2</div>
+      <Link href="/cart" passHref>
+        <div className={styles.navItem}>
+          <div className={styles.cart}>
+            <Image
+              src="/img/cart.png"
+              alt="logo image"
+              width="30px"
+              height="30px"
+            />
+            <div className={styles.counter}>
+              <div className={styles.number}>{quantity}</div>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
       <MobileNav open={drawerIsOpen} onClick={toggleDrawer} />
       <SliderDrawer
         open={drawerIsOpen}
