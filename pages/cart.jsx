@@ -203,7 +203,12 @@ const Cart = () => {
           )}
         </div>
       </div>
-      <OrderModal show={withCash} onCancel={() => setWithCash(false)} />
+      <OrderModal
+        show={withCash}
+        onCancel={() => setWithCash(false)}
+        total={cart.total}
+        createOrder={createOrder}
+      />
     </>
   );
 };

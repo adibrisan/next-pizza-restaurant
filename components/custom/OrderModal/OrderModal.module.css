@@ -10,6 +10,7 @@
   width: 30%;
   transform: translate(-50%, -50%);
   height: calc(max-content + 10vh);
+  width: max-content;
   background-color: var(--color-white);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 2rem;
