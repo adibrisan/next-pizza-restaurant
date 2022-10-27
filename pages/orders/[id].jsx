@@ -1,11 +1,12 @@
+import axios from "axios";
 import Image from "next/image";
 
 import Button from "../../components/core/Button/Button";
 
 import styles from "../../styles/Order.module.css";
 
-const Order = () => {
-  const status = 0;
+const Order = ({ order }) => {
+  const status = order.status;
 
   const statusSteps = (index) => {
     if (index - status < 1) {
@@ -31,16 +32,16 @@ const Order = () => {
               </tr>
               <tr>
                 <td>
-                  <span className={styles.orderId}>12123132312123</span>
+                  <span className={styles.orderId}>{order._id}</span>
                 </td>
                 <td>
-                  <span className={styles.customerName}>Adrian B.</span>
+                  <span className={styles.customerName}>{order.customer}</span>
                 </td>
                 <td>
-                  <span className={styles.address}>Vasile Pirvan 2</span>
+                  <span className={styles.address}>{order.address}</span>
                 </td>
                 <td>
-                  <span className={styles.total}>$39.80</span>
+                  <span className={styles.total}>${order.total}</span>
                 </td>
               </tr>
             </tbody>
@@ -81,19 +82,29 @@ const Order = () => {
         <div className={styles.cartWrapper}>
           <h2 className={styles.title}>Cart total</h2>
           <div className={styles.lastDetails}>
-            <b>Subtotal:</b> $79.60
+            <b>Subtotal:</b> ${order.total}
           </div>
           <div className={styles.lastDetails}>
             <b>Discount:</b> $0.00
           </div>
           <div className={styles.lastDetails}>
-            <b>Total:</b> $79.60
+            <b>Total:</b> ${order.total}
           </div>
         </div>
         <Button name="Paid" simple className={styles.checkoutBtn} />
       </div>
     </div>
   );
+};
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+
+  return {
+    props: {
+      order: res.data,
+    },
+  };
 };
 
 export default Order;
