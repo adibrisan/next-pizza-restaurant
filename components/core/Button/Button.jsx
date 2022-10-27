@@ -3,11 +3,19 @@ import Link from "next/link";
 
 import styles from "./Button.module.css";
 
-const Button = ({ name, className, link, href, simple, ...props }) => {
+const Button = ({
+  name,
+  className,
+  link,
+  href,
+  passHref,
+  simple,
+  ...props
+}) => {
   return (
     <>
       {link ? (
-        <Link href={link ? "href" : "#"}>
+        <Link href={link && href ? href : "#"} passHref>
           <a className={styles.btn_link}>{name}</a>
         </Link>
       ) : (

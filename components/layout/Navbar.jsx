@@ -37,7 +37,7 @@ const Navbar = () => {
       <div className={styles.navItem}>
         <ul className={styles.navList}>
           <li className={styles.listItem}>
-            <Button name="Home" link />
+            <Button name="Home" link href="/" passHref />
           </li>
           <li className={styles.listItem}>
             <Button name="Products" link />

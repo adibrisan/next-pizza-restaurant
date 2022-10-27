@@ -87,10 +87,10 @@ const Cart = () => {
           onApprove={function (data, actions) {
             return actions.order.capture().then(function (details) {
               const shipping = details.purchase_units[0].shipping;
-
               createOrder({
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
+                phone: shipping.phone_number,
                 total: cart.total,
                 method: 1,
               });

@@ -12,7 +12,13 @@ const OrderModal = (props) => {
   const [phone, setPhone] = useState("");
 
   const submitCashOrder = () => {
-    props.createOrder({ customer, address, total: props.total, method: 0 });
+    props.createOrder({
+      customer,
+      address,
+      phone,
+      total: props.total,
+      method: 0,
+    });
   };
 
   return (
@@ -20,8 +26,10 @@ const OrderModal = (props) => {
       {props.show && (
         <>
           <Backdrop onClick={props.onCancel} />
-          <div className={styles.container} onClick={props.onCancel}>
-            <div className={styles.closeModal}>X</div>
+          <div className={styles.container}>
+            <div className={styles.closeModal} onClick={props.onCancel}>
+              X
+            </div>
             <span className={styles.title}>
               You will have to pay ${props.total} after delivery.
             </span>
