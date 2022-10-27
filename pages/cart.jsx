@@ -15,6 +15,7 @@ import { resetCart } from "../redux/cartSlice";
 import Button from "../components/core/Button/Button";
 
 import styles from "../styles/Cart.module.css";
+import OrderModal from "../components/custom/OrderModal/OrderModal";
 
 const Cart = () => {
   const [paypalOpen, setPaypalOpen] = useState(false);
@@ -202,6 +203,7 @@ const Cart = () => {
           )}
         </div>
       </div>
+      <OrderModal show={withCash} onCancel={() => setWithCash(false)} />
     </>
   );
 };
