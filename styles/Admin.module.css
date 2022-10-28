@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  background-color: var(--color-white);
+  margin: 15vh 8rem;
+}
+
+.products {
+  flex: 1;
+  background-color: green;
+  margin-right: 2rem;
+}
+
+.imgContainer {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+}
+
+.pizzaOrders {
+  flex: 2;
+}
+
+.tableContainer {
+  border-spacing: 2rem;
+  width: max-content;
+}
+
+tbody .row {
+  font-size: 1.7rem;
+}
+
+.pizzaId {
+  font-weight: 500;
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+
+.pizzaTitle,
+.pizzaPrice,
+.pizzaQuantity {
+  font-size: 1.5rem;
+}
+
+.pizzaAction {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.orders {
+  flex: 1;
+  background-color: red;
+}
