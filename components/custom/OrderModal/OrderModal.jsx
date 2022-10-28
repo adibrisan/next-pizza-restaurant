@@ -1,26 +1,44 @@
-import { useState } from "react";
+import { useFormik } from "formik";
 
 import Backdrop from "../Backdrop/Backdrop";
 import Button from "../../core/Button/Button";
 import Input from "../../core/Input/Input";
 
+import { cashModalValidationSchema } from "../../../validation/cashModalValidation";
+
 import styles from "./OrderModal.module.css";
 
 const OrderModal = (props) => {
-  const [customer, setCustomer] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
+  const formData = {
+    customer: "",
+    phone: "",
+    address: "",
+  };
+
+  const {
+    values,
+    errors,
+    touched,
+    isValid,
+    handleChange,
+    handleBlur,
+    setFieldTouched,
+  } = useFormik({
+    initialValues: formData,
+    validationSchema: cashModalValidationSchema,
+    validateOnMount: true,
+  });
 
   const submitCashOrder = () => {
     props.createOrder({
-      customer,
-      address,
-      phone,
+      customer: values.customer,
+      address: values.address,
+      phone: values.phone,
       total: props.total,
       method: 0,
     });
   };
-
+  console.log(props.total);
   return (
     <>
       {props.show && (
@@ -37,23 +55,60 @@ const OrderModal = (props) => {
             <Input
               defaultStyle
               placeholder="Name Surname"
-              value={customer}
-              onChange={(e) => setCustomer(e.target.value)}
+              value={values.customer}
+              onChange={handleChange("customer")}
+              error={errors.customer}
+              touched={touched.customer}
+              onBlur={() => {
+                if (!touched.customer) {
+                  setFieldTouched("customer", true);
+                }
+                handleBlur("customer");
+              }}
             />
             <Input
               defaultStyle
               placeholder="Phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              value={values.phone}
+              onChange={handleChange("phone")}
+              error={errors.phone}
+              touched={touched.phone}
+              onBlur={() => {
+                if (!touched.phone) {
+                  setFieldTouched("phone", true);
+                }
+                handleBlur("phone");
+              }}
             />
-            <textarea
-              rows={4}
-              placeholder="Your address"
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
+            <div className={styles.addressContainer}>
+              <textarea
+                id="address"
+                rows={4}
+                placeholder="Your address"
+                type="text"
+                value={values.address}
+                onChange={handleChange("address")}
+                error={errors.address}
+                touched={touched.address}
+                onBlur={() => {
+                  if (!touched.address) {
+                    setFieldTouched("address", true);
+                  }
+                  handleBlur("address");
+                }}
+              />
+              {errors.address && touched.address && (
+                <label className={styles.addressError} htmlFor="address">
+                  {errors.address}
+                </label>
+              )}
+            </div>
+            <Button
+              isDisabled={!isValid || props.total === 0}
+              simple
+              name="Order"
+              onClick={submitCashOrder}
             />
-            <Button simple name="Order" onClick={submitCashOrder} />
           </div>
         </>
       )}

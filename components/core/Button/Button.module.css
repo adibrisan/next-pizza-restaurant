@@ -49,3 +49,10 @@
 .btn:active {
   transform: translateY(-2px);
 }
+
+.btn:disabled {
+  border: solid var(--outrageousOrange);
+  color: var(--color-grey-dark-1);
+  background-color: var(--color-white);
+  cursor: not-allowed;
+}

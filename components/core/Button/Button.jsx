@@ -10,6 +10,7 @@ const Button = ({
   href,
   passHref,
   simple,
+  isDisabled,
   ...props
 }) => {
   return (
@@ -19,7 +20,11 @@ const Button = ({
           <a className={styles.btn_link}>{name}</a>
         </Link>
       ) : (
-        <button className={className ? className : styles.btn} {...props}>
+        <button
+          disabled={isDisabled}
+          className={className ? className : styles.btn}
+          {...props}
+        >
           {name} {!simple && <div>&rarr;</div>}
         </button>
       )}
