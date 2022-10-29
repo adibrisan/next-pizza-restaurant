@@ -69,6 +69,16 @@
 
   .addressContainer {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .addressError {
+    position: absolute;
+    left: 0.2rem;
+    top: 7rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--outrageousOrange);
   }
 }

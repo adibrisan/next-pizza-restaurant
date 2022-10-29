@@ -71,3 +71,23 @@
   font-weight: 400;
   color: var(--outrageousOrange);
 }
+
+@media screen and (max-width: 1400px) {
+  .default {
+    position: relative;
+  }
+
+  .default input {
+    margin-bottom: 2rem;
+  }
+
+  .error {
+    position: absolute;
+    left: 0.2rem;
+    top: 4.5rem;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--outrageousOrange);
+  }
+}
