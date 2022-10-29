@@ -31,8 +31,8 @@ export default async function handleProduct(req, res) {
 
   if (method === "DELETE") {
     try {
-      const product = await Product.create(req.body);
-      res.status(201).json(product);
+      await Product.findByIdAndDelete(id);
+      res.status(200).json("The product has been deleted");
     } catch (err) {
       console.log(err);
       res.status(500).json(err); //TODO: add toast for error case

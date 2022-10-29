@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./Button.module.css";
 
 const Button = ({
+  style,
   name,
   className,
   link,
@@ -21,6 +22,7 @@ const Button = ({
         </Link>
       ) : (
         <button
+          style={style}
           disabled={isDisabled}
           className={className ? className : styles.btn}
           {...props}

@@ -6,8 +6,8 @@
 
 .products {
   flex: 1;
-  background-color: green;
   margin-right: 2rem;
+  text-align: center;
 }
 
 .imgContainer {
@@ -35,6 +35,10 @@ tbody .row {
   font-size: 1.8rem;
 }
 
+.ptitle {
+  width: 1rem;
+}
+
 .pizzaTitle,
 .pizzaPrice,
 .pizzaQuantity {
@@ -46,13 +50,23 @@ tbody .row {
   font-size: 1.8rem;
 }
 
+.actions {
+  display: flex;
+  flex-direction: column;
+  width: 2rem;
+}
+
 .title {
   text-transform: uppercase;
   margin-bottom: 2rem;
   font-size: 2rem;
+  text-align: center;
 }
 
 .orders {
   flex: 1;
-  background-color: red;
+  text-align: center;
+}
+
+.customer {
 }
