@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20rem;
+  height: 15rem;
+  padding: 1.5rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .inputContainer {
+    height: 20rem;
+  }
+}

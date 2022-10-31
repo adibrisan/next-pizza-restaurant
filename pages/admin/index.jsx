@@ -144,7 +144,18 @@ const Index = ({ orders, pizzaList }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
+  const cookie = context.req?.cookies || "";
+
+  if (cookie.token !== process.env.COOKIE_TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/login",
+        permanent: false,
+      },
+    };
+  }
+
   const products = await axios.get("http://localhost:3000/api/products");
   const orders = await axios.get("http://localhost:3000/api/orders");
 
