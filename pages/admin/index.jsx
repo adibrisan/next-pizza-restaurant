@@ -131,6 +131,7 @@ const Index = ({ orders, pizzaList }) => {
                 </td>
                 <td>
                   <Button
+                    entity="&rarr;"
                     name="Next Stage"
                     onClick={() => handleStatus(order._id)}
                   />

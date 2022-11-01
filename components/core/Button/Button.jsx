@@ -12,6 +12,7 @@ const Button = ({
   passHref,
   simple,
   isDisabled,
+  entity,
   ...props
 }) => {
   return (
@@ -27,7 +28,7 @@ const Button = ({
           className={className ? className : styles.btn}
           {...props}
         >
-          {name} {!simple && <div>&rarr;</div>}
+          {name} {!simple && <div>{entity}</div>}
         </button>
       )}
     </>

@@ -131,7 +131,7 @@ const Product = ({ pizza }) => {
               value={noPizza}
               onChange={(e) => setNoPizza(e.target.value)}
             />
-            <Button name="Add to Cart" onClick={handleSubmit} />
+            <Button entity="&rarr;" name="Add to Cart" onClick={handleSubmit} />
           </div>
         </div>
       </div>

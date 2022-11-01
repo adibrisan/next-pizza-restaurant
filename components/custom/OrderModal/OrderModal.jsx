@@ -104,6 +104,7 @@ const OrderModal = (props) => {
               )}
             </div>
             <Button
+              entity="&rarr;"
               isDisabled={!isValid || props.total === 0}
               simple
               name="Order"
