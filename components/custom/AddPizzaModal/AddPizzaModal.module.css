@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  position: fixed;
+  padding: 5rem;
+  left: 50%;
+  top: 50%;
+  width: 30%;
+  transform: translate(-50%, -50%);
+  height: 65rem;
+  width: 40%;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 2rem;
+
+  z-index: 3000;
+}
+
+.closeModal {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 600;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.chooseImgContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.titleDescription {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.prices {
+  width: 9rem;
+}
+
+.extra {
+  width: 100%;
+}
+
+.extraForm {
+  display: flex;
+  width: 100%;
+}

@@ -38,7 +38,7 @@ const OrderModal = (props) => {
       method: 0,
     });
   };
-  console.log(props.total);
+
   return (
     <>
       {props.show && (

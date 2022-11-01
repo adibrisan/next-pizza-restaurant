@@ -1,6 +1,8 @@
 import axios from "axios";
 import Head from "next/head";
+import { useState } from "react";
 
+import AddPizzaModal from "../components/custom/AddPizzaModal/AddPizzaModal";
 import Slider from "../components/custom/Slider";
 import PizzaMenu from "../components/custom/PizzaMenu";
 
@@ -9,6 +11,8 @@ import Button from "../components/core/Button/Button";
 import styles from "../styles/HomeLayout.module.css";
 
 export default function Home({ pizzaMenu, isAdmin }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -19,11 +23,18 @@ export default function Home({ pizzaMenu, isAdmin }) {
       <div className={styles.layout}>
         <Slider />
         {isAdmin && (
-          <Button
-            entity="&rarr;"
-            style={{ marginLeft: "20px" }}
-            name="Add pizza"
-          />
+          <>
+            <Button
+              entity="&rarr;"
+              style={{ marginLeft: "20px" }}
+              name="Add pizza"
+              onClick={() => setIsModalOpen(true)}
+            />
+            <AddPizzaModal
+              show={isModalOpen}
+              onCancel={() => setIsModalOpen(false)}
+            />
+          </>
         )}
         <PizzaMenu pizzaMenu={pizzaMenu} />
       </div>
