@@ -7,9 +7,8 @@
   padding: 5rem;
   left: 50%;
   top: 50%;
-  width: 30%;
   transform: translate(-50%, -50%);
-  height: 65rem;
+  height: 85rem;
   width: 40%;
   background-color: var(--color-white);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -55,5 +54,6 @@
 
 .extraForm {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }

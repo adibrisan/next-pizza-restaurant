@@ -1,18 +1,45 @@
+import { useFormik } from "formik";
 import { useState } from "react";
 
 import Backdrop from "../Backdrop/Backdrop";
 import Button from "../../core/Button/Button";
 import Input from "../../core/Input/Input";
 
+import { addModalValidationSchema } from "../../../validation/addModalValidation";
+
 import styles from "./AddPizzaModal.module.css";
 
 const AddPizzaModal = (props) => {
   const [file, setFile] = useState(null);
-  const [title, setTitle] = useState(null);
-  const [desc, setDesc] = useState(null);
+  // const [title, setTitle] = useState(null);
+  // const [desc, setDesc] = useState(null);
   const [prices, setPrices] = useState([]);
   const [extraOptions, setExtraOptions] = useState([]);
-  const [extra, setExtra] = useState(null);
+  // const [extra, setExtra] = useState(null);
+
+  const formData = {
+    title: "",
+    description: "",
+    price1: 0,
+    price2: 0,
+    price3: 0,
+    extra: "",
+    extraPrice: 0,
+  };
+
+  const {
+    values,
+    errors,
+    touched,
+    isValid,
+    handleChange,
+    handleBlur,
+    setFieldTouched,
+  } = useFormik({
+    initialValues: formData,
+    validationSchema: addModalValidationSchema,
+    validateOnMount: true,
+  });
 
   return (
     <>
@@ -29,36 +56,131 @@ const AddPizzaModal = (props) => {
               <input type="file" />
             </section>
             <section className={styles.titleDescription}>
-              <Input placeholder="Title" />
+              <Input
+                addModalStyle
+                placeholder="Title"
+                value={values.title}
+                onChange={handleChange("title")}
+                error={errors.title}
+                touched={touched.title}
+                onBlur={() => {
+                  if (!touched.title) {
+                    setFieldTouched("title", true);
+                  }
+                  handleBlur("title");
+                }}
+              />
               <textarea
                 id="description"
                 rows={4}
                 placeholder="Description"
                 type="text"
+                value={values.description}
+                onChange={handleChange("description")}
+                onBlur={() => {
+                  if (!touched.description) {
+                    setFieldTouched("description", true);
+                  }
+                  handleBlur("description");
+                }}
               />
-              {/* {errors.address && touched.address && (
-                <label className={styles.addressError} htmlFor="description">
-                  {errors.address}
-                </label>
-              )} */}
+              {errors.description && touched.description && (
+                <label htmlFor="description">{errors.description}</label>
+              )}
             </section>
             <section className={styles.prices}>
-              <Input style={{ width: "100%" }} placeholder="Small" />
-              <Input style={{ width: "100%" }} placeholder="Medium" />
-              <Input style={{ width: "100%" }} placeholder="Large" />
+              <Input
+                addModalStyle
+                type="number"
+                style={{ width: "100%" }}
+                placeholder="Small"
+                value={values.price1}
+                onChange={handleChange("price1")}
+                error={errors.price1}
+                touched={touched.price1}
+                onBlur={() => {
+                  if (!touched.price1) {
+                    setFieldTouched("price1", true);
+                  }
+                  handleBlur("price1");
+                }}
+              />
+              <Input
+                addModalStyle
+                type="number"
+                style={{ width: "100%" }}
+                placeholder="Medium"
+                value={values.price2}
+                onChange={handleChange("price2")}
+                error={errors.price2}
+                touched={touched.price2}
+                onBlur={() => {
+                  if (!touched.price2) {
+                    setFieldTouched("price2", true);
+                  }
+                  handleBlur("price2");
+                }}
+              />
+              <Input
+                addModalStyle
+                type="number"
+                style={{ width: "100%" }}
+                placeholder="Large"
+                value={values.price3}
+                onChange={handleChange("price3")}
+                error={errors.price3}
+                touched={touched.price3}
+                onBlur={() => {
+                  if (!touched.price3) {
+                    setFieldTouched("price3", true);
+                  }
+                  handleBlur("price3");
+                }}
+              />
             </section>
             <section className={styles.extra}>
-              <span>Extra</span>
+              <label htmlFor="ingredient">Extra</label>
               <div className={styles.extraForm}>
-                <Input style={{ width: "120px" }} placeholder="Ingredient" />
                 <Input
-                  style={{ width: "120px", margin: "0 20px" }}
-                  placeholder="Price"
+                  addModalStyle
+                  id="ingredient"
+                  style={{ width: "120px" }}
+                  placeholder="Ingredient"
+                  value={values.extra}
+                  onChange={handleChange("extra")}
+                  error={errors.extra}
+                  touched={touched.extra}
+                  onBlur={() => {
+                    if (!touched.extra) {
+                      setFieldTouched("extra", true);
+                    }
+                    handleBlur("extra");
+                  }}
                 />
-                <Button entity="&rarr;" name="Add" />
+                <Input
+                  addModalStyle
+                  type="number"
+                  placeholder="Price"
+                  value={values.extraPrice}
+                  onChange={handleChange("extraPrice")}
+                  error={errors.extraPrice}
+                  touched={touched.extraPrice}
+                  onBlur={() => {
+                    if (!touched.extraPrice) {
+                      setFieldTouched("extraPrice", true);
+                    }
+                    handleBlur("extraPrice");
+                  }}
+                />
+                <Button entity="&rarr;" name="Add extra" />
               </div>
             </section>
-            <Button style={{ width: "100%" }} simple name="Create" />
+            <Button
+              isDisabled={!isValid}
+              style={{ width: "100%" }}
+              simple
+              name="Create"
+            />
           </div>
         </>
       )}

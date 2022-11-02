@@ -88,8 +88,6 @@ const OrderModal = (props) => {
                 type="text"
                 value={values.address}
                 onChange={handleChange("address")}
-                error={errors.address}
-                touched={touched.address}
                 onBlur={() => {
                   if (!touched.address) {
                     setFieldTouched("address", true);

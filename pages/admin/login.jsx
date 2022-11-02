@@ -80,6 +80,7 @@ const Login = () => {
         />
       </div>
       <Button
+        simple
         isDisabled={!isValid}
         style={{ width: "100px", marginTop: "30px" }}
         name="Login"

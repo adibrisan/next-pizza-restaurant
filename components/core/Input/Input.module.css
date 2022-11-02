@@ -73,6 +73,16 @@
   color: var(--outrageousOrange);
 }
 
+.addError {
+  position: absolute;
+  width: 30rem;
+  margin-left: 14rem;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--outrageousOrange);
+}
+
 @media screen and (max-width: 1400px) {
   .default {
     position: relative;

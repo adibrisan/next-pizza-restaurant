@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       res.setHeader(
         "Set-Cookie",
         cookie.serialize("token", process.env.COOKIE_TOKEN, {
-          maxAge: 60 * 60,
+          maxAge: 60 * 60 * 24,
           sameSite: "strict",
           path: "/",
         })
