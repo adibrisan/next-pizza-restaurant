@@ -8,14 +8,11 @@ import Input from "../../core/Input/Input";
 import { addModalValidationSchema } from "../../../validation/addModalValidation";
 
 import styles from "./AddPizzaModal.module.css";
+import axios from "axios";
 
 const AddPizzaModal = (props) => {
   const [file, setFile] = useState(null);
-  // const [title, setTitle] = useState(null);
-  // const [desc, setDesc] = useState(null);
-  const [prices, setPrices] = useState([]);
   const [extraOptions, setExtraOptions] = useState([]);
-  // const [extra, setExtra] = useState(null);
 
   const formData = {
     title: "",
@@ -41,6 +38,54 @@ const AddPizzaModal = (props) => {
     validateOnMount: true,
   });
 
+  const changePrice = () => {
+    const currentPrices = [];
+    let index = 0;
+    currentPrices[index++] = values.price1;
+    currentPrices[index++] = values.price2;
+    currentPrices[index] = values.price3;
+
+    return currentPrices;
+  };
+
+  const handleExtraOptions = () => {
+    setExtraOptions((prev) => [
+      ...prev,
+      { title: values.extra, price: values.extraPrice },
+    ]);
+  };
+
+  const handleCreate = async () => {
+    const { title, description } = values;
+    const data = new FormData();
+
+    data.append("file", file);
+    data.append("upload_preset", "uploads");
+
+    try {
+      const uploadRes = await axios.post(
+        "https://api.cloudinary.com/v1_1/dfyp8qq1i/image/upload",
+        data
+      );
+
+      const { url } = uploadRes.data;
+
+      const newPizza = {
+        title,
+        description,
+        prices: changePrice(),
+        extra: extraOptions,
+        img: url,
+      };
+
+      await axios.post("http://localhost:3000/api/products", newPizza);
+
+      props.onCancel();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       {props.show && (
@@ -53,7 +98,7 @@ const AddPizzaModal = (props) => {
             <span className={styles.title}>Add a new Pizza</span>
             <section className={styles.chooseImgContainer}>
               <label className={styles.label}>Choose an image</label>
-              <input type="file" />
+              <input type="file" onChange={(e) => setFile(e.target.files[0])} />
             </section>
             <section className={styles.titleDescription}>
               <Input
@@ -172,14 +217,24 @@ const AddPizzaModal = (props) => {
                     handleBlur("extraPrice");
                   }}
                 />
-                <Button entity="&rarr;" name="Add extra" />
+                {extraOptions.map((extraItem, index) => (
+                  <span key={index} className={styles.text}>
+                    {extraItem.title}
+                  </span>
+                ))}
+                <Button
+                  entity="&rarr;"
+                  name="Add extra"
+                  onClick={handleExtraOptions}
+                />
               </div>
             </section>
             <Button
               isDisabled={!isValid}
-              style={{ width: "100%" }}
+              style={{ width: "100%", marginTop: "10px" }}
               simple
               name="Create"
+              onClick={handleCreate}
             />
           </div>
         </>
