@@ -47,6 +47,7 @@ const AddPizzaModal = (props) => {
       setFieldValue("price1", props.pizzaItem.prices[0]);
       setFieldValue("price2", props.pizzaItem.prices[1]);
       setFieldValue("price3", props.pizzaItem.prices[2]);
+      setExtraOptions([...props.pizzaItem.extra]);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -210,14 +211,6 @@ const AddPizzaModal = (props) => {
                   placeholder="Ingredient"
                   value={values.extra}
                   onChange={handleChange("extra")}
-                  error={errors.extra}
-                  touched={touched.extra}
-                  onBlur={() => {
-                    if (!touched.extra) {
-                      setFieldTouched("extra", true);
-                    }
-                    handleBlur("extra");
-                  }}
                 />
                 <Input
                   addModalStyle
@@ -225,14 +218,6 @@ const AddPizzaModal = (props) => {
                   placeholder="Price"
                   value={values.extraPrice}
                   onChange={handleChange("extraPrice")}
-                  error={errors.extraPrice}
-                  touched={touched.extraPrice}
-                  onBlur={() => {
-                    if (!touched.extraPrice) {
-                      setFieldTouched("extraPrice", true);
-                    }
-                    handleBlur("extraPrice");
-                  }}
                 />
                 {extraOptions.map((extraItem, index) => (
                   <span key={index} className={styles.text}>
