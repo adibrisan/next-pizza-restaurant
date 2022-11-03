@@ -13,7 +13,7 @@ const Index = ({ orders, pizzaList }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete("http://localhost:3000/api/products/" + id);
+      await axios.delete(`${process.env.BASE_URL}/products/${id}`);
       setProductList(pizzaList.filter((pizza) => pizza._id !== id));
       console.log(`deleted ${id}`);
     } catch (err) {
@@ -26,7 +26,7 @@ const Index = ({ orders, pizzaList }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("http://localhost:3000/api/orders/" + id, {
+      const res = await axios.put(`${process.env.BASE_URL}/orders/${id}`, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -157,8 +157,8 @@ export const getServerSideProps = async (context) => {
     };
   }
 
-  const products = await axios.get("http://localhost:3000/api/products");
-  const orders = await axios.get("http://localhost:3000/api/orders");
+  const products = await axios.get(`${process.env.BASE_URL}/products`);
+  const orders = await axios.get(`${process.env.BASE_URL}/orders`);
 
   return {
     props: {

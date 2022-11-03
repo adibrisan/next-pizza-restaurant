@@ -34,7 +34,7 @@ const Login = () => {
   const handleLogin = async () => {
     const { username, password } = values;
     try {
-      await axios.post("http://localhost:3000/api/login", {
+      await axios.post(`${process.env.BASE_URL}/login`, {
         username,
         password,
       });

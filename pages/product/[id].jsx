@@ -55,7 +55,7 @@ const Product = ({ pizza }) => {
       <div className={styles.container}>
         <div className={styles.pizzaImg}>
           <Image
-            src="/img/pizza.png"
+            src={pizza.img}
             alt="picked pizza"
             layout="responsive"
             width="500px"
@@ -142,9 +142,7 @@ const Product = ({ pizza }) => {
 export default Product;
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(
-    `http://localhost:3000/api/products/${params.id}`
-  );
+  const res = await axios.get(`${process.env.BASE_URL}/products/${params.id}`);
 
   return {
     props: {

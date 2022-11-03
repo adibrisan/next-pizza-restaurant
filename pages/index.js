@@ -50,7 +50,7 @@ export const getServerSideProps = async (context) => {
     isAdmin = true;
   }
 
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get(`${process.env.BASE_URL}/products`);
 
   return {
     props: {
