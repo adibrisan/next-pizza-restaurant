@@ -1,8 +1,9 @@
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
+import AddPizzaModal from "../../components/custom/AddPizzaModal/AddPizzaModal";
 import Button from "../../components/core/Button/Button";
 
 import styles from "../../styles/Admin.module.css";
@@ -10,6 +11,8 @@ import styles from "../../styles/Admin.module.css";
 const Index = ({ orders, pizzaList }) => {
   const [productList, setProductList] = useState(pizzaList);
   const [orderList, setOrderList] = useState(orders);
+  const [openEditModal, setOpenEditModal] = useState(false);
+  const pizzaRef = useRef(null);
   const status = ["preparing", "on the way", "delivered"];
 
   const handleDelete = async (id) => {
@@ -45,7 +48,7 @@ const Index = ({ orders, pizzaList }) => {
   return (
     <>
       <Head>
-        <title>Admin</title>
+        <title>Admin dashboard</title>
         <meta name="description" content="Best pizza in town" />
         <link rel="icon" href="/pizza.ico" />
       </Head>
@@ -92,6 +95,10 @@ const Index = ({ orders, pizzaList }) => {
                       style={{ width: "60px", backgroundColor: "#83c5be" }}
                       simple
                       name="Edit"
+                      onClick={() => {
+                        pizzaRef.current = pizza;
+                        setOpenEditModal(true);
+                      }}
                     />
                     <div style={{ margin: "5px" }}></div>
                     <Button
@@ -154,6 +161,11 @@ const Index = ({ orders, pizzaList }) => {
           </table>
         </div>
       </div>
+      <AddPizzaModal
+        pizzaItem={pizzaRef.current}
+        show={openEditModal}
+        onCancel={() => setOpenEditModal(false)}
+      />
     </>
   );
 };

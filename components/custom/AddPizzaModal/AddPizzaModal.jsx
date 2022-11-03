@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Backdrop from "../Backdrop/Backdrop";
 import Button from "../../core/Button/Button";
@@ -13,6 +13,7 @@ import axios from "axios";
 const AddPizzaModal = (props) => {
   const [file, setFile] = useState(null);
   const [extraOptions, setExtraOptions] = useState([]);
+  const modalTitle = props.pizzaItem ? "Edit Pizza" : "Add a new Pizza";
 
   const formData = {
     title: "",
@@ -31,12 +32,25 @@ const AddPizzaModal = (props) => {
     isValid,
     handleChange,
     handleBlur,
+    setFieldValue,
     setFieldTouched,
   } = useFormik({
     initialValues: formData,
     validationSchema: addModalValidationSchema,
     validateOnMount: true,
   });
+
+  useEffect(() => {
+    if (props.pizzaItem) {
+      setFieldValue("title", props.pizzaItem.title);
+      setFieldValue("description", props.pizzaItem.description);
+      setFieldValue("price1", props.pizzaItem.prices[0]);
+      setFieldValue("price2", props.pizzaItem.prices[1]);
+      setFieldValue("price3", props.pizzaItem.prices[2]);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.pizzaItem]);
 
   const changePrice = () => {
     const currentPrices = [];
@@ -98,7 +112,7 @@ const AddPizzaModal = (props) => {
             <div className={styles.closeModal} onClick={props.onCancel}>
               X
             </div>
-            <span className={styles.title}>Add a new Pizza</span>
+            <span className={styles.title}>{modalTitle}</span>
             <section className={styles.chooseImgContainer}>
               <label className={styles.label}>Choose an image</label>
               <input type="file" onChange={(e) => setFile(e.target.files[0])} />

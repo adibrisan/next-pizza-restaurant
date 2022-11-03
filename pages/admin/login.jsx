@@ -34,7 +34,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     const { username, password } = values;
-    console.log(process.env.NEXT_PUBLIC_BASE_URL);
+
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, {
         username,
