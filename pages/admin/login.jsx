@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useFormik } from "formik";
 
@@ -33,8 +34,9 @@ const Login = () => {
 
   const handleLogin = async () => {
     const { username, password } = values;
+    console.log(process.env.NEXT_PUBLIC_BASE_URL);
     try {
-      await axios.post(`${process.env.BASE_URL}/login`, {
+      await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, {
         username,
         password,
       });
@@ -46,47 +48,54 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1>Admin dashboard</h1>
-      <div className={styles.inputContainer}>
-        <Input
-          defaultStyle
-          placeholder="username"
-          value={values.username}
-          onChange={handleChange("username")}
-          error={errors.username}
-          touched={touched.username}
-          onBlur={() => {
-            if (!touched.username) {
-              setFieldTouched("username", true);
-            }
-            handleBlur("username");
-          }}
-        />
-        <Input
-          defaultStyle
-          type="password"
-          placeholder="password"
-          value={values.password}
-          onChange={handleChange("password")}
-          error={errors.password}
-          touched={touched.password}
-          onBlur={() => {
-            if (!touched.password) {
-              setFieldTouched("password", true);
-            }
-            handleBlur("password");
-          }}
+    <>
+      <Head>
+        <title>Admin login</title>
+        <meta name="description" content="Best pizza in town" />
+        <link rel="icon" href="/pizza.ico" />
+      </Head>
+      <div className={styles.container}>
+        <h1>Admin dashboard</h1>
+        <div className={styles.inputContainer}>
+          <Input
+            defaultStyle
+            placeholder="username"
+            value={values.username}
+            onChange={handleChange("username")}
+            error={errors.username}
+            touched={touched.username}
+            onBlur={() => {
+              if (!touched.username) {
+                setFieldTouched("username", true);
+              }
+              handleBlur("username");
+            }}
+          />
+          <Input
+            defaultStyle
+            type="password"
+            placeholder="password"
+            value={values.password}
+            onChange={handleChange("password")}
+            error={errors.password}
+            touched={touched.password}
+            onBlur={() => {
+              if (!touched.password) {
+                setFieldTouched("password", true);
+              }
+              handleBlur("password");
+            }}
+          />
+        </div>
+        <Button
+          simple
+          isDisabled={!isValid}
+          style={{ width: "100px", marginTop: "30px" }}
+          name="Login"
+          onClick={handleLogin}
         />
       </div>
-      <Button
-        simple
-        isDisabled={!isValid}
-        style={{ width: "100px", marginTop: "30px" }}
-        name="Login"
-        onClick={handleLogin}
-      />
-    </div>
+    </>
   );
 };
 

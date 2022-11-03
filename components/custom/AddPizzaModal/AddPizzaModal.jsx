@@ -64,7 +64,7 @@ const AddPizzaModal = (props) => {
 
     try {
       const uploadRes = await axios.post(
-        `https://api.cloudinary.com/v1_1/${process.env.CLOUD_ID}/image/upload`,
+        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUD_ID}/image/upload`,
         data
       );
 
@@ -78,7 +78,10 @@ const AddPizzaModal = (props) => {
         img: url,
       };
 
-      await axios.post(`${process.env.BASE_URL}/products`, newPizza);
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/products`,
+        newPizza
+      );
 
       props.onCancel();
     } catch (err) {
