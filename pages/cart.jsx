@@ -132,7 +132,7 @@ const Cart = () => {
                         alt="ordered pizza"
                         layout="fill"
                         objectFit="cover"
-                        priority
+                        loading="lazy"
                       />
                     </div>
                   </td>

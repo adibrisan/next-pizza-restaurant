@@ -12,6 +12,7 @@ const Footer = () => {
           alt="footer img"
           layout="fill"
           objectFit="cover"
+          loading="lazy"
         />
       </div>
       <h3 className={styles.footerTitle}>

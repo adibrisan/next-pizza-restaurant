@@ -27,6 +27,7 @@ const Navbar = () => {
             alt="call image"
             width="32px"
             height="32px"
+            loading="lazy"
           />
         </div>
         <div className={styles.texts}>
@@ -51,6 +52,7 @@ const Navbar = () => {
               alt="logo image"
               width="350px"
               height="200px"
+              loading="lazy"
             />
           </div>
           <li className={styles.listItem}>
@@ -72,6 +74,7 @@ const Navbar = () => {
               alt="logo image"
               width="30px"
               height="30px"
+              loading="lazy"
             />
             <div className={styles.counter}>
               <div className={styles.number}>{quantity}</div>

@@ -16,6 +16,7 @@ const PizzaCard = ({ pizzaDetails }) => {
             alt="pizza item"
             width="150px"
             height="150px"
+            loading="lazy"
           />
         </div>
         <h1 className={styles.pizzaTitle}>{pizzaDetails.title}</h1>

@@ -28,8 +28,14 @@ export default async function handleProduct(req, res) {
     }
 
     try {
-      const product = await Product.findByIdAndUpdate(req.body);
-      res.status(201).json(product);
+      const updatedProduct = await Product.findByIdAndUpdate(
+        id,
+        {
+          $set: req.body,
+        },
+        { new: true }
+      );
+      res.status(201).json(updatedProduct);
     } catch (err) {
       console.log(err);
       res.status(500).json(err); //TODO: add toast for error case

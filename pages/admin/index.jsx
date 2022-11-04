@@ -75,7 +75,7 @@ const Index = ({ orders, pizzaList }) => {
                         width="60px"
                         height="60px"
                         objectFit="cover"
-                        priority
+                        loading="lazy"
                       />
                     </div>
                   </td>

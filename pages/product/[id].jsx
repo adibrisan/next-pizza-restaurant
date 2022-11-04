@@ -60,6 +60,7 @@ const Product = ({ pizza }) => {
             layout="responsive"
             width="500px"
             height="500px"
+            loading="lazy"
           />
         </div>
         <div className={styles.pizzaOptions}>
@@ -79,6 +80,7 @@ const Product = ({ pizza }) => {
                   alt="pizza size"
                   width="40p"
                   height="40px"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -91,6 +93,7 @@ const Product = ({ pizza }) => {
                   alt="pizza size"
                   width="60p"
                   height="60px"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -103,6 +106,7 @@ const Product = ({ pizza }) => {
                   alt="pizza size"
                   width="70p"
                   height="70px"
+                  loading="lazy"
                 />
               </div>
             </div>

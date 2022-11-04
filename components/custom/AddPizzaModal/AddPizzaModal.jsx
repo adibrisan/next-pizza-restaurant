@@ -92,11 +92,18 @@ const AddPizzaModal = (props) => {
         extra: extraOptions,
         img: url,
       };
-
-      await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/products`,
-        newPizza
-      );
+      if (!props.pizzaItem) {
+        await axios.post(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/products`,
+          newPizza
+        );
+      } else {
+        const id = props.pizzaItem._id;
+        await axios.put(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/products/${id}`,
+          newPizza
+        );
+      }
 
       props.onCancel();
     } catch (err) {

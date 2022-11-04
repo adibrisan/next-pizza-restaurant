@@ -66,6 +66,7 @@ const Order = ({ order }) => {
                   width={20}
                   height={20}
                   alt="paid"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -78,6 +79,7 @@ const Order = ({ order }) => {
                   width={20}
                   height={20}
                   alt="paid"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -90,6 +92,7 @@ const Order = ({ order }) => {
                   width={20}
                   height={20}
                   alt="paid"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -99,6 +102,7 @@ const Order = ({ order }) => {
                 width={30}
                 height={30}
                 alt="paid"
+                loading="lazy"
               />
               <span>Delivered</span>
               <div className={styles.checkedIcon}>
@@ -107,6 +111,7 @@ const Order = ({ order }) => {
                   width={20}
                   height={20}
                   alt="paid"
+                  loading="lazy"
                 />
               </div>
             </div>
