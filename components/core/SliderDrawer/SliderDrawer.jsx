@@ -28,26 +28,6 @@ const SliderDrawer = ({ open, onClick }) => {
     <>
       {renderSlide && (
         <aside className={sliderStyle} onClick={onClick}>
-          {/* <ul className={styles.navList}>
-            <li>
-              <Button name="Home" link />
-            </li>
-            <li>
-              <Button name="Products" link />
-            </li>
-            <li>
-              <Button name="Menu" link />
-            </li>
-            <li>
-              <Button name="Events" link />
-            </li>
-            <li>
-              <Button name="Blog" link />
-            </li>
-            <li>
-              <Button name="Contact" link />
-            </li>
-          </ul> */}
           <NavBarList />
         </aside>
       )}

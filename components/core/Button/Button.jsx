@@ -19,7 +19,9 @@ const Button = ({
     <>
       {link ? (
         <Link href={link && href ? href : "#"} passHref>
-          <a className={styles.btn_link}>{name}</a>
+          <a onClick={props.onClick} className={styles.btn_link}>
+            {name}
+          </a>
         </Link>
       ) : (
         <button

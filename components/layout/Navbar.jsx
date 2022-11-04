@@ -7,41 +7,61 @@ import SliderDrawer from "../core/SliderDrawer/SliderDrawer";
 import MobileNav from "../core/MobileNav/MobileNav";
 import Button from "../core/Button/Button";
 
+import { MENU_OFFSET } from "../../consts";
+
 import styles from "../../styles/Navbar.module.css";
 
-export const NavBarList = () => (
-  <div className={styles.navItem}>
-    <ul className={styles.navList}>
-      <li className={styles.listItem}>
-        <Button name="Home" link href="/" passHref />
-      </li>
-      <li className={styles.listItem}>
-        <Button name="Products" link />
-      </li>
-      <li className={styles.listItem}>
-        <Button name="Menu" link />
-      </li>
-      <div className={styles.mainLogo}>
-        <Image
-          src="/img/logo.png"
-          alt="logo image"
-          width="350px"
-          height="200px"
-          loading="lazy"
-        />
-      </div>
-      <li className={styles.listItem}>
-        <Button name="Events" link />
-      </li>
-      <li className={styles.listItem}>
-        <Button name="Blog" link />
-      </li>
-      <li className={styles.listItem}>
-        <Button name="Contact" link />
-      </li>
-    </ul>
-  </div>
-);
+export const NavBarList = () => {
+  const goToBottom = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
+  const goToMenu = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: MENU_OFFSET,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div className={styles.navItem}>
+      <ul className={styles.navList}>
+        <li className={styles.listItem}>
+          <Button name="Home" link href="/" passHref />
+        </li>
+        <li className={styles.listItem}>
+          <Button name="Products" link />
+        </li>
+        <li className={styles.listItem}>
+          <Button onClick={goToMenu} name="Menu" link />
+        </li>
+        <div className={styles.mainLogo}>
+          <Image
+            src="/img/logo.png"
+            alt="logo image"
+            width="350px"
+            height="200px"
+            loading="lazy"
+          />
+        </div>
+        <li className={styles.listItem}>
+          <Button name="Events" link />
+        </li>
+        <li className={styles.listItem}>
+          <Button name="Blog" link />
+        </li>
+        <li className={styles.listItem}>
+          <Button onClick={goToBottom} name="Contact" link />
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
