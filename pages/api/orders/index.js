@@ -2,6 +2,8 @@ import dbConnect from "../../../lib/mongo";
 
 import Order from "../../../models/Order";
 
+import { FINISHED_ORDER } from "../../../consts";
+
 export default async function handleOrders(req, res) {
   const { method } = req;
 
@@ -9,7 +11,11 @@ export default async function handleOrders(req, res) {
 
   if (method === "GET") {
     try {
-      const orders = await Order.find();
+      const orders = await Order.find({
+        status: {
+          $lte: FINISHED_ORDER,
+        },
+      });
       res.status(200).json(orders);
     } catch (err) {
       res.status(500).json(err);
