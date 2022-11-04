@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Button from "../Button/Button";
+import { NavBarList } from "../../layout/Navbar";
 
 import { MOBILE_SLIDER_TIMEOUT } from "../../../consts";
 
@@ -27,7 +28,7 @@ const SliderDrawer = ({ open, onClick }) => {
     <>
       {renderSlide && (
         <aside className={sliderStyle} onClick={onClick}>
-          <ul className={styles.navList}>
+          {/* <ul className={styles.navList}>
             <li>
               <Button name="Home" link />
             </li>
@@ -46,7 +47,8 @@ const SliderDrawer = ({ open, onClick }) => {
             <li>
               <Button name="Contact" link />
             </li>
-          </ul>
+          </ul> */}
+          <NavBarList />
         </aside>
       )}
     </>

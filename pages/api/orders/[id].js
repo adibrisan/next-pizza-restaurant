@@ -27,7 +27,4 @@ export default async function handleOrders(req, res) {
       res.status(500).json(err);
     }
   }
-
-  if (method === "DELETE") {
-  }
 }

@@ -15,6 +15,7 @@
 .navItem {
   flex: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -103,6 +104,13 @@
     margin-right: 3rem;
   }
 
+  .navItem .navList {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .callItem {
     background-color: var(--color-white);
     border-radius: 50%;
@@ -113,5 +121,13 @@
 
   .texts .text {
     font-size: 1.8rem;
+  }
+
+  .navList {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
   }
 }
