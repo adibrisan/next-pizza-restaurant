@@ -196,6 +196,7 @@
 
 @media screen and (max-width: 600px) {
   .container {
+    margin-top: 10vh;
     place-items: center;
     height: max-content;
   }
@@ -246,6 +247,11 @@
 }
 
 @media screen and (max-width: 400px) {
+  .container {
+    margin-top: 10vh;
+    height: max-content;
+  }
+
   .pizzaOptions {
     /* grid-column: 1 / 1; */
     display: flex;
