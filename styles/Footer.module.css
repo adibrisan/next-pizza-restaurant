@@ -55,6 +55,38 @@
   color: var(--color-laser);
 }
 
+@media screen and (max-width: 400px) {
+  .footerTitle {
+    grid-column: 2 / 2;
+    align-self: center;
+    padding: 0.2rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    color: var(--color-grey-light-2);
+    transform: translateY(-8vh);
+  }
+
+  .addressContainer {
+    grid-column: 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 10vh;
+  }
+
+  .addressContainer h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--color-laser);
+  }
+
+  .address {
+    width: 8rem;
+    color: var(--color-grey-light-2);
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .container {
     display: flex;
