@@ -1,4 +1,5 @@
 import cookie from "cookie";
+import NextCors from "nextjs-cors";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -8,10 +9,11 @@ export default async function handler(req, res) {
       username === process.env.USERNAME &&
       password === process.env.PASSWORD
     ) {
-      res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-      );
+      await NextCors(req, res, {
+        methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+        origin: "*",
+        optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+      });
 
       res.setHeader(
         "Set-Cookie",
