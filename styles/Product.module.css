@@ -202,7 +202,7 @@
   }
 
   .pizzaOptions .size .pizzaSizes {
-    width: 48vw;
+    width: max-content;
   }
 
   .sizeContainer .category {
@@ -219,18 +219,32 @@
   }
 
   .pizzaOptions {
-    width: 40vw;
     display: grid;
     grid-column: 2 / -1;
     place-items: center;
+    text-align: center;
+  }
+
+  .size {
+    text-align: start;
+    display: grid;
+    place-items: center;
+  }
+
+  .additional h2 {
+    text-align: center;
   }
 
   .pizzaOptions .size .pizzaSizes {
-    width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .additional {
+    display: grid;
+    place-items: center;
   }
 
   .additional .additionContainer {
@@ -239,39 +253,7 @@
 
   .submit {
     flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .container {
-    margin-top: 10vh;
-    height: max-content;
-  }
-
-  .pizzaOptions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .size {
-    text-align: start;
-  }
-
-  .additionContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .additional h2 {
-    text-align: start;
-  }
-
-  .submit {
-    width: 10rem;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 }
