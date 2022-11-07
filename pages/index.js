@@ -24,12 +24,15 @@ export default function Home({ pizzaMenu, isAdmin }) {
         <Slider />
         {isAdmin && (
           <>
-            <Button
-              entity="&rarr;"
-              style={{ marginLeft: "20px" }}
-              name="Add pizza"
-              onClick={() => setIsModalOpen(true)}
-            />
+            <div className={styles.adminBtn}>
+              <Button
+                entity="&rarr;"
+                style={{ marginLeft: "20px" }}
+                name="Add pizza"
+                onClick={() => setIsModalOpen(true)}
+              />
+            </div>
+
             <AddPizzaModal
               show={isModalOpen}
               onCancel={() => setIsModalOpen(false)}
