@@ -19,7 +19,8 @@
   font-size: 2.5rem;
   font-family: var(--font-primary);
   color: var(--color-grey-light-2);
-  transform: translateY(-16vh);
+  padding: 3rem;
+  /* transform: translateY(-16vh); */
 }
 
 .addressContainer {
@@ -60,6 +61,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: min-content;
   }
 
   .addressContainer {
@@ -83,10 +85,10 @@
     align-self: center;
     padding: 0.2rem;
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-family: var(--font-primary);
     color: var(--color-grey-light-2);
-    transform: translateY(-8vh);
+    /* transform: translateY(-8vh); */
   }
 
   .addressContainer {
@@ -107,7 +109,7 @@
     font-size: 1rem;
     font-family: var(--font-primary);
     color: var(--color-grey-light-2);
-    transform: translateY(-8vh);
+    /* transform: translateY(-8vh); */
   }
 
   .addressContainer {
@@ -139,7 +141,7 @@
     font-size: 1rem;
     font-family: var(--font-primary);
     color: var(--color-grey-light-2);
-    transform: translateY(-8vh);
+    /* transform: translateY(-8vh); */
   }
 
   .addressContainer {
