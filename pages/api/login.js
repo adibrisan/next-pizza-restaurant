@@ -8,6 +8,11 @@ export default async function handler(req, res) {
       username === process.env.USERNAME &&
       password === process.env.PASSWORD
     ) {
+      res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+      );
+
       res.setHeader(
         "Set-Cookie",
         cookie.serialize("token", process.env.COOKIE_TOKEN, {
