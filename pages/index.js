@@ -51,7 +51,7 @@ export const getServerSideProps = async (context) => {
   }
 
   const res = await axios.get(
-    "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products"
+    "https://next-pizza-restaurant-tau.vercel.app/api/products"
   );
 
   return {

@@ -18,7 +18,7 @@ const Index = ({ orders, pizzaList }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products/${id}`
+        `https://next-pizza-restaurant-tau.vercel.app/products/${id}`
       );
       setProductList(pizzaList.filter((pizza) => pizza._id !== id));
       console.log(`deleted ${id}`);
@@ -33,7 +33,7 @@ const Index = ({ orders, pizzaList }) => {
 
     try {
       const res = await axios.put(
-        `https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/orders/${id}`,
+        `https://next-pizza-restaurant-tau.vercel.app/api/orders/${id}`,
         {
           status: currentStatus + 1,
         }
@@ -185,10 +185,10 @@ export const getServerSideProps = async (context) => {
   }
 
   const products = await axios.get(
-    "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products"
+    "https://next-pizza-restaurant-tau.vercel.app/api/products"
   );
   const orders = await axios.get(
-    "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/orders"
+    "https://next-pizza-restaurant-tau.vercel.app/api/orders"
   );
 
   return {

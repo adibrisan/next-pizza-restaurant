@@ -139,7 +139,7 @@ const Order = ({ order }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/orders/${params.id}`
+    `https://next-pizza-restaurant-tau.vercel.app/api/orders/${params.id}`
   );
 
   return {

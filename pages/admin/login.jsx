@@ -37,7 +37,7 @@ const Login = () => {
 
     try {
       await axios.post(
-        "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/login",
+        "https://next-pizza-restaurant-tau.vercel.app/api/login",
         {
           username,
           password,

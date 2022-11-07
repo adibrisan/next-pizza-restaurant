@@ -94,13 +94,13 @@ const AddPizzaModal = (props) => {
       };
       if (!props.pizzaItem) {
         await axios.post(
-          "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products",
+          "https://next-pizza-restaurant-tau.vercel.app/api/products",
           newPizza
         );
       } else {
         const id = props.pizzaItem._id;
         await axios.put(
-          `https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products/${id}`,
+          `https://next-pizza-restaurant-tau.vercel.app/api/products/${id}`,
           newPizza
         );
       }
