@@ -36,7 +36,7 @@ const Login = () => {
     const { username, password } = values;
 
     try {
-      await axios.post("api/login", {
+      await axios.post("/api/login", {
         username,
         password,
       });
