@@ -112,29 +112,12 @@
   }
 }
 
-@media screen and (max-width: 630px) {
-  .pizzaOptions .size .pizzaSizes {
-    width: 70vw;
-  }
-
-  .sizeContainer .category {
-    font-size: 1.7rem;
-    position: absolute;
-    top: 0;
-  }
-
-  .additionContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 @media screen and (min-width: 630px) and (max-width: 840px) {
   .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: max-content;
   }
 
   .pizzaImg {
@@ -161,6 +144,7 @@
 @media screen and (min-width: 840px) and (max-width: 1200px) {
   .container {
     margin-bottom: 4rem;
+    height: max-content;
   }
   .pizzaImg {
     padding-top: 22rem;
@@ -184,6 +168,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+    height: max-content;
   }
 
   .pizzaImg {
@@ -205,5 +191,51 @@
     font-size: 1.7rem;
     position: absolute;
     top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    place-items: center;
+    height: max-content;
+  }
+
+  .pizzaOptions .size .pizzaSizes {
+    width: 48vw;
+  }
+
+  .sizeContainer .category {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+  }
+
+  .additionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 5rem; */
+  }
+
+  .pizzaOptions {
+    width: 40vw;
+    display: grid;
+    place-items: center;
+  }
+
+  .pizzaOptions .size .pizzaSizes {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .additional .additionContainer {
+    width: max-content;
+  }
+
+  .submit {
+    flex-direction: column;
   }
 }
