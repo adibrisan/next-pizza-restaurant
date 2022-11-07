@@ -146,9 +146,7 @@ const Product = ({ pizza }) => {
 export default Product;
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/products/${params.id}`
-  );
+  const res = await axios.get(`api/products/${params.id}`);
 
   return {
     props: {

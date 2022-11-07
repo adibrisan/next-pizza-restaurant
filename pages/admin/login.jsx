@@ -36,7 +36,7 @@ const Login = () => {
     const { username, password } = values;
 
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, {
+      await axios.post("api/login", {
         username,
         password,
       });

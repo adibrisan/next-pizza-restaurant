@@ -31,10 +31,7 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/orders`,
-        data
-      );
+      const res = await axios.post("api/orders", data);
 
       if (res.status === 201) {
         router.push(`/orders/${res.data._id}`);
