@@ -31,7 +31,10 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("/api/orders", data);
+      const res = await axios.post(
+        "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/orders",
+        data
+      );
 
       if (res.status === 201) {
         router.push(`/orders/${res.data._id}`);

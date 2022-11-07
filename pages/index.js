@@ -50,7 +50,9 @@ export const getServerSideProps = async (context) => {
     isAdmin = true;
   }
 
-  const res = await axios.get("/api/products");
+  const res = await axios.get(
+    "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products"
+  );
 
   return {
     props: {

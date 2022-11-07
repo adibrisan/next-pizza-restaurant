@@ -36,10 +36,13 @@ const Login = () => {
     const { username, password } = values;
 
     try {
-      await axios.post("/api/login", {
-        username,
-        password,
-      });
+      await axios.post(
+        "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/login",
+        {
+          username,
+          password,
+        }
+      );
 
       router.push("/admin");
     } catch (err) {

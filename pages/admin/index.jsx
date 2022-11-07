@@ -17,7 +17,9 @@ const Index = ({ orders, pizzaList }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/products/${id}`);
+      await axios.delete(
+        `https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products/${id}`
+      );
       setProductList(pizzaList.filter((pizza) => pizza._id !== id));
       console.log(`deleted ${id}`);
     } catch (err) {
@@ -30,9 +32,12 @@ const Index = ({ orders, pizzaList }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put(`/api/orders/${id}`, {
-        status: currentStatus + 1,
-      });
+      const res = await axios.put(
+        `https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/orders/${id}`,
+        {
+          status: currentStatus + 1,
+        }
+      );
       setOrderList([
         res.data,
         ...orderList.filter((order) => order._id !== id),
@@ -179,8 +184,12 @@ export const getServerSideProps = async (context) => {
     };
   }
 
-  const products = await axios.get("/api/products");
-  const orders = await axios.get("/api/orders");
+  const products = await axios.get(
+    "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/products"
+  );
+  const orders = await axios.get(
+    "https://next-pizza-restaurant-2gw2g3rnc-adibrisan.vercel.app/api/orders"
+  );
 
   return {
     props: {
