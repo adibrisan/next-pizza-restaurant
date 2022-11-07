@@ -22,6 +22,7 @@ export default function Home({ pizzaMenu, isAdmin }) {
       </Head>
       <div className={styles.layout}>
         <Slider />
+
         {isAdmin && (
           <>
             <div className={styles.adminBtn}>
@@ -32,7 +33,6 @@ export default function Home({ pizzaMenu, isAdmin }) {
                 onClick={() => setIsModalOpen(true)}
               />
             </div>
-
             <AddPizzaModal
               show={isModalOpen}
               onCancel={() => setIsModalOpen(false)}
