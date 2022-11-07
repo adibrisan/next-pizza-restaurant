@@ -7,8 +7,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/admin/login",
-        destination: "/admin",
+        source: "/api/admin/login",
+        destination: "https://next-pizza-restaurant-tau.vercel.app/admin",
       },
     ];
   },
