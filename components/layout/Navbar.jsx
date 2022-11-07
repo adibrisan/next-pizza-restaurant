@@ -35,9 +35,6 @@ export const NavBarList = () => {
           <Button name="Home" link href="/" passHref />
         </li>
         <li className={styles.listItem}>
-          <Button name="Products" link />
-        </li>
-        <li className={styles.listItem}>
           <Button onClick={goToMenu} name="Menu" link />
         </li>
         <div className={styles.mainLogo}>
@@ -49,9 +46,6 @@ export const NavBarList = () => {
             loading="lazy"
           />
         </div>
-        <li className={styles.listItem}>
-          <Button name="Events" link />
-        </li>
         <li className={styles.listItem}>
           <Button name="Blog" link />
         </li>
