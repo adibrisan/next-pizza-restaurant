@@ -18,7 +18,7 @@ const Index = ({ orders, pizzaList }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://next-pizza-restaurant-tau.vercel.app/products/${id}`
+        `https://next-pizza-restaurant-tau.vercel.app/api/products/${id}`
       );
       setProductList(pizzaList.filter((pizza) => pizza._id !== id));
       console.log(`deleted ${id}`);
