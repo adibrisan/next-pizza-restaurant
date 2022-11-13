@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -12,7 +13,12 @@ import { MENU_OFFSET } from "../../consts";
 import styles from "../../styles/Navbar.module.css";
 
 export const NavBarList = () => {
-  const goToBottom = (e) => {
+  const router = useRouter();
+
+  const goToBottom = async (e) => {
+    if (router.pathname !== "/") {
+      await router.push("/");
+    }
     e.preventDefault();
     window.scrollTo({
       top: document.documentElement.scrollHeight,
@@ -20,7 +26,10 @@ export const NavBarList = () => {
     });
   };
 
-  const goToMenu = (e) => {
+  const goToMenu = async (e) => {
+    if (router.pathname !== "/") {
+      await router.push("/");
+    }
     e.preventDefault();
     window.scrollTo({
       top: MENU_OFFSET,
