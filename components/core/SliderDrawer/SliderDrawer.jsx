@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import Button from "../Button/Button";
 import { NavBarList } from "../../layout/Navbar";
 
 import { MOBILE_SLIDER_TIMEOUT } from "../../../consts";
